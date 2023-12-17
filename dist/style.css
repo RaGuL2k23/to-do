@@ -1,0 +1,99 @@
+html,body{
+    margin: 0; padding: 0;
+      width: 100vw;
+    height: 100vh;
+    background-color: rgba(220, 220, 220, 0.681); 
+    & ul{
+      list-style: none;
+    } 
+    position: relative;
+}
+:root{
+  --priority-size:5px solid;
+  --low-priority: green;
+  --medium-priority:  blue;
+  --high-priority:  red;
+  --todotask-bg-clr:#f28aef;
+   --form-bg-clr:rgba(255, 105, 180, 0.74);
+    --header-clr:rgb(192, 51, 236);
+  }
+  .header{
+    background-color:var(--header-clr);
+    font-size: 30px;
+    
+  }
+  .hero{ 
+    height: 100vh;
+    display: grid;
+    grid-template-columns:140px 1fr;
+    grid-template-rows: 40px 1fr; 
+    & .header{
+      grid-column: 1/-1;
+    }
+    & .nav{ 
+      background-color: lightblue;
+      display: flex;flex-direction: column;
+      align-items: center;gap: 20px;
+    }
+
+  } 
+  #toDoTaskDetail { 
+    -webkit-appearance: none;
+    appearance: none;border: 0;padding:0;
+
+    position:absolute;
+    top:140px;
+    right: -100px;
+    & form{
+      background-color: var(--form-bg-clr);
+    padding: 10px;
+    display: grid; column-gap: 10px;
+    grid-template-columns: repeat(2,1fr );  
+    width: clamp(350px,50vw,450px);   
+    & p{
+      width: 12vw;
+      display: flex;gap: 15px;
+      flex-flow: column;
+        & input,option,select{width: 12vw; height: 20px;  }
+        & textarea{ resize: none;}
+    }
+    }
+    
+
+  }
+  button{
+    margin-top: 19px;
+    background-color: #3197eb;
+    border-radius: 5px;
+    color: white;
+    padding: 3px;  width: 100px;
+    &:active{
+        cursor: pointer;
+        box-shadow: inset 2px 3px 3px gray;
+        background-color: #38380cdd;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+/*to do task styling */
+[type=checkbox]{
+  accent-color:rgb(121, 236, 103);
+}
+ .contentHolder{
+  padding: 50px; 
+ }
+ [src*="pen"],[src*="trash"]{
+  width:30px;height: 30px;
+ }
+ .toDoTask{
+  background-color:var(--todotask-bg-clr); 
+  display: flex;
+  align-items: center;justify-content: space-around;
+ }
+ .LOW{
+  border-left: var(--priority-size)  var(--low-priority)
+ }
+ .MEDIUM{border-left: var(--priority-size)  var(--medium-priority);}
+ .HIGH{  border-left: var(--priority-size)  var(--high-priority);   }
