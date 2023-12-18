@@ -12,10 +12,8 @@ module.exports = {
   devServer: {
     static: './dist',
   }, 
-    
-  devServer: {
-    static: './dist',
-  }, 
+  cache: false,
+   
   module: {
      rules: [
       {
@@ -32,6 +30,5 @@ module.exports = {
       },
      ],
    },
-  mode: 'development',
-  devtool: 'inline-source-map',
+  
 };
